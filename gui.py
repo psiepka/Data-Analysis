@@ -28,6 +28,9 @@ class mywindow(QtWidgets.QMainWindow):
     def btnCloseClicked(self):
         self.close()
 
+    def show_preview_page(self, page):
+        lambda page: self.ui.QStackedWidget.setCurrentIndex(page)
+
     def check_file(self):
         self.angle = self.ui.angle_SB.text()
 
@@ -66,7 +69,7 @@ class mywindow(QtWidgets.QMainWindow):
         self.ui.file_L.setText(self.file.split('/')[-1])
         self.ui.QStackedWidget.setCurrentIndex(1)
         self.setWindowTitle('TiM 551 analiza jezdni - ' + self.project)
-        self.ui.back_PB_1.clicked.connect(self.view_first)
+        self.ui.back_PB_1.clicked.connect(self.show_previous_page)
         self.ui.close_PB_1.clicked.connect(self.btnCloseClicked)
         self.ui.angle_SB.setMaximum(225)
         self.ui.angle_SB.setMinimum(-45)
@@ -121,7 +124,12 @@ class mywindow(QtWidgets.QMainWindow):
                 return
             self.complate = 75
             self.ui.progressBar.setValue(self.complate)
+            # if self.scan.df_reg['area'].min() > 15000:
             self.scan.clean_antiregression_data(10000)
+            # elif self.scan.df_reg['area'].min() < 15000:
+            #     # stupid selection
+            #     val = self.scan.df_reg['area'][self.scan.df_reg['area'] < self.scan.df_reg['area'][self.scan.df_reg['area']<self.scan.df_reg['area'].median()].mean()].mean()
+                # self.scan.clean_antiregression_data(val)
             self.complate = 82
             self.ui.progressBar.setValue(self.complate)
             self.scan.correct_regression()
@@ -143,9 +151,22 @@ class mywindow(QtWidgets.QMainWindow):
 
     def view_page_2(self):
         self.ui.QStackedWidget.setCurrentIndex(2)
-        self.ui.back_PB_2.clicked.connect(self.view_page_1)
+        self.ui.back_PB_2.clicked.connect(self.show_previous_page)
         self.ui.close_PB_2.clicked.connect(self.btnCloseClicked)
         self.ui.next_PB_2.clicked.connect(self.view_page_3)
+        self.ui.save_PB_2.clicked.connect(self.save_last_df)
+
+    def save_last_df(self):
+        # options = QtWidgets.QFileDialog.Options()
+        # options |= QtWidgets.QFileDialog.DontUseNativeDialog
+        fileName, ext = QtWidgets.QFileDialog.getSaveFileName(self,"QtWidgets.QFileDialog.getSaveFileName()","","Pliki z danymi (*.xlsx)")
+        if fileName:
+            f = fileName
+            if f.split('.')[-1] != 'xlsx':
+                f = fileName + '.xlsx'
+            self.scan.save_data_excel(f)
+            if os.path.isfile(f):
+                QtWidgets.QMessageBox.about(self, "Zapisano pomyślnie !", "Gratuluje, pomyślnie zapisano dane.")
 
     def plot_data_p2(self):
         self.ui.sum_a_L.setText(str(round(self.scan.df_reg.sum()['area']*0.01, 2)) + ' cm\u00b2')
@@ -189,14 +210,17 @@ class mywindow(QtWidgets.QMainWindow):
             self.ui.p_a3_L.setText(str(self.scan.df_reg.loc[point]['coef_1']) + ' % ; ' + str(self.scan.df_reg.loc[point]['coef_2']) +' % ')
 
     def view_page_3(self):
-        self.ui.back_PB_3.clicked.connect(self.view_page_2)
+        self.ui.QStackedWidget.setCurrentIndex(3)
+        self.ui.back_PB_3.clicked.connect(self.show_previous_page)
         self.ui.close_PB_3.clicked.connect(self.btnCloseClicked)
         self.plot_data_p3()
-        self.ui.QStackedWidget.setCurrentIndex(3)
         self.ui.point_HS.setMaximum(len(self.scan.df_reg)-1)
         self.ui.point_SB.setMaximum(len(self.scan.df_reg)-1)
         self.ui.point_HS.valueChanged.connect(self.hs_value_change)
         self.ui.point_SB.valueChanged.connect(self.sb_value_change)
+
+    def show_previous_page(self):
+        self.ui.QStackedWidget.setCurrentIndex(self.ui.QStackedWidget.currentIndex()-1)
 
     def hs_value_change(self):
         self.ui.point_SB.setValue(self.ui.point_HS.value())

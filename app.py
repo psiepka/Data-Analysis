@@ -161,9 +161,10 @@ class Scan_Data:
         """
         fig = plt.figure()
         ax= fig.add_subplot(111, projection='3d')
-        x = self.df['oś x'].values.reshape(len(self.df.index.levels[0]), len(self.scan_data.iloc[0])) # or x_array.reshape(len(scan_data)
-        y = self.df['oś y'].values.reshape(len(self.df.index.levels[0]), len(self.scan_data.iloc[0])) # or y_array.reshape(len(scan_data)
-        z = np.array([self.df.index.levels[0][x] for x in self.df.index.labels[0]]).reshape(len(self.df.index.levels[0]), len(self.scan_data.iloc[0]))
+        resh = len(set(self.df_reg_data.index.get_level_values('kąt pomiaru')))
+        x = self.df['oś x'].values.reshape(len(self.df.index.levels[0]), resh) # or x_array.reshape(len(scan_data)
+        y = self.df['oś y'].values.reshape(len(self.df.index.levels[0]), resh) # or y_array.reshape(len(scan_data)
+        z = np.array([self.df.index.levels[0][x] for x in self.df.index.labels[0]]).reshape(len(self.df.index.levels[0]), resh)
         return ax.plot_wireframe(x, z, y)
 
     def generate_2D(self, z_point, condition=None):
@@ -301,3 +302,16 @@ class Scan_Data:
         self.df_reg_data['reg y'] = self.df_reg_data['reg y'].groupby([self.df_reg_data.index.get_level_values('kąt pomiaru')]).apply(lambda x: x.interpolate())
         self.df_reg_data = self.df_reg_data.groupby([self.df_reg_data.index.get_level_values('pomiar')]).apply(self.correct_area)
         self.df_reg['area'] = self.df_reg_data['area'].groupby([self.df.index.get_level_values('pomiar')]).apply(np.sum)
+    
+    def save_data_excel(self, name_file):
+        """
+        Saving dataframe with most important data calculate in script to excel file
+        name_file [str] - name of excel with data
+        """
+        data = self.df_reg.copy()
+        if len(self.df_reg.columns) == 3:
+            data.columns = ['Pole nierówności [mm\u00b2]', 'Pochylenie lewej strony [%]', 'Pochylenie prawej strony [%]']
+        else:
+            data.columns = ['Pole nierówności [mm\u00b2]', 'Pochylenie [%]']
+        data.index.name = 'Punkt pomiarowy'
+        data.to_excel(name_file)
