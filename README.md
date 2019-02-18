@@ -1,6 +1,6 @@
 <h3>Data-Analysis</h3>
 
-<h4>Analysis data in python.</h4>
+<h4>Analysis data in <u>python</u>.</h4>
 
 Used packeges:
 <ul>
@@ -58,7 +58,7 @@ Data from device looks :
 <br>
 <hr>
 <br>
-<h5><u>Graphical user interface with functionality</u></h5>: <br>
+<h4><u>Graphical user interface with functionality</u>:</h4> <br>
 <br>
 <img src="git_img/intro1.png" alt="">
 <ul>
