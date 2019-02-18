@@ -61,26 +61,40 @@ Data from device looks :
 <u>Graphical user interface with functionality</u>: <br>
 <br>
 <ul>
-    <img src="git_img/intro1.png" alt="">
-    <li>Setting name of project and select data file </li>
+    <li>
+        <img src="git_img/intro1.png" alt="">        
+        <p>Setting name of project and select data file </p>
+    </li>
 
-    <img src="git_img/intro2.png" alt="">
-    <li>Reading file with specified data (condatain validation) </li>
+    <li>
+        <img src="git_img/intro2.png" alt="">
 
-    <img src="git_img/intro4.png" alt="">
-    <li>Setting parameters </li>
+        <p>Reading file with specified data (condatain validation)</p>
+    </li>
 
-    <img src="git_img/intro5.png" alt="">
-    <li>Display calculated road unevenness area</li>
+    <li>
+            <img src="git_img/intro4.png" alt="">
+        <p>Setting parameters </p>
+    </li>
+    
+    <li>
+        <img src="git_img/intro5.png" alt="">
+        <p>Display calculated road unevenness area</p>
+    </li>
+    <li>
+        <img src="git_img/intro6.png" alt="">
+        <p>Detailed 2D shape of roadway with regression (calculated coef of road)</p>
+    </li>
 
-    <img src="git_img/intro6.png" alt="">
-    <li>Detailed 2D shape of roadway with regression (calculated coef of road) </li>
+    <li>
+        <img src="git_img/intro7.png" alt="">
+        <p>Interpolated shape of regression in places of holes</p>
+    </li>
 
-    <img src="git_img/intro7.png" alt="">
-    <li>Interpolated shape of regression in places of holes</li>
-
-    <img src="git_img/intro8.png" alt="">
-    <li>Option to save most important calculated data</li>
+    <li>
+        <img src="git_img/intro8.png" alt="">
+        <p>Option to save most important calculated data</p>
+    </li>
 </ul>
 
 
