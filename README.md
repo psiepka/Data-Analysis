@@ -18,7 +18,7 @@ All code was tested Jupyter notebook.
 <u>Preview</u>: <br>
 <br>
 Program is created for Civil Engineers to analyze roadway.
-Main goal is to process data from laser scanner TiM 551 - SICK.
+Main goal is to process data from a <a href="https://www.sick.com/us/en/detection-and-ranging-solutions/2d-lidar-sensors/tim5xx/tim551-2050001/p/p343045">laser scaner TiM 551</a>.
 All information that we need to get are compute in SOPAS engeenring tool and save in csv or excel file.
 File generete from SOPAS contain state device during measure and data of measure.
 Data from device looks :
@@ -56,3 +56,35 @@ Data from device looks :
     <li>saving calculated data</li>
 </ul>
 <br>
+<hr>
+<br>
+<u>Graphical user interface with functionality</u>: <br>
+<br>
+<ul>
+    <img src="git_img/intro1.png" alt="">
+    <li>Setting name of project and select data file </li>
+
+    <img src="git_img/intro2.png" alt="">
+    <li>Reading file with specified data (condatain validation) </li>
+
+    <img src="git_img/intro4.png" alt="">
+    <li>Setting parameters </li>
+
+    <img src="git_img/intro5.png" alt="">
+    <li>Display calculated road unevenness area</li>
+
+    <img src="git_img/intro6.png" alt="">
+    <li>Detailed 2D shape of roadway with regression (calculated coef of road) </li>
+
+    <img src="git_img/intro7.png" alt="">
+    <li>Interpolated shape of regression in places of holes</li>
+
+    <img src="git_img/intro8.png" alt="">
+    <li>Option to save most important calculated data</li>
+</ul>
+
+
+<br><br>
+<em>If You want to check functionallity of TiM 551 road analyze, download "sample_data.xlsx" and run 'dist/gui.exe'. Parameters to set up like on images above.</em>
+<br>
+<p>Thanks for reading, and have fun.</p>

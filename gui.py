@@ -159,7 +159,7 @@ class mywindow(QtWidgets.QMainWindow):
     def save_last_df(self):
         # options = QtWidgets.QFileDialog.Options()
         # options |= QtWidgets.QFileDialog.DontUseNativeDialog
-        fileName, ext = QtWidgets.QFileDialog.getSaveFileName(self,"QtWidgets.QFileDialog.getSaveFileName()","","Pliki z danymi (*.xlsx)")
+        fileName, ext = QtWidgets.QFileDialog.getSaveFileName(self,"Zapisz dane z TiM 551 analiza jezdni","","Pliki z danymi (*.xlsx)")
         if fileName:
             f = fileName
             if f.split('.')[-1] != 'xlsx':
