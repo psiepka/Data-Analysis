@@ -66,46 +66,45 @@ Data from device looks :
         <p>Setting name of project and select data file </p>
     </li>
 </ul>
+<img src="git_img/intro2.png" alt="">
 <ul>
-    <img src="git_img/intro2.png" alt="">
     <li>
         <p>Reading file with specified data (condatain validation)</p>
     </li>
 </ul>
+<img src="git_img/intro4.png" alt="">
 <ul>
     <li>
-        <img src="git_img/intro4.png" alt="">
         <p>Setting parameters </p>
     </li>
 </ul>
 
 
+<img src="git_img/intro5.png" alt="">
 <ul>
     <li>
-        <img src="git_img/intro5.png" alt="">
         <p>Display calculated road unevenness area</p>
     </li>
-        
 </ul>
 
+<img src="git_img/intro6.png" alt="">
 <ul>
     <li>
-        <img src="git_img/intro6.png" alt="">
         <p>Detailed 2D shape of roadway with regression (calculated coef of road)</p>
     </li>
 
 </ul>
 
+<img src="git_img/intro7.png" alt="">
 <ul>
     <li>
-        <img src="git_img/intro7.png" alt="">
         <p>Interpolated shape of regression in places of holes</p>
     </li>
 </ul>
 
+<img src="git_img/intro8.png" alt="">
 <ul>
     <li>
-        <img src="git_img/intro8.png" alt="">
         <p>Option to save most important calculated data</p>
     </li>
 </ul>
