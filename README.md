@@ -58,7 +58,7 @@ Data from device looks :
 <br>
 <hr>
 <br>
-<u>Graphical user interface with functionality</u>: <br>
+<h5><u>Graphical user interface with functionality</u></h5>: <br>
 <br>
 <img src="git_img/intro1.png" alt="">
 <ul>
@@ -66,12 +66,16 @@ Data from device looks :
         <p>Setting name of project and select data file </p>
     </li>
 </ul>
+<hr>
+<br>
 <img src="git_img/intro2.png" alt="">
 <ul>
     <li>
         <p>Reading file with specified data (condatain validation)</p>
     </li>
 </ul>
+<hr>
+<br>
 <img src="git_img/intro4.png" alt="">
 <ul>
     <li>
@@ -79,14 +83,16 @@ Data from device looks :
     </li>
 </ul>
 
-
+<hr>
+<br>
 <img src="git_img/intro5.png" alt="">
 <ul>
     <li>
         <p>Display calculated road unevenness area</p>
     </li>
 </ul>
-
+<hr>
+<br>
 <img src="git_img/intro6.png" alt="">
 <ul>
     <li>
@@ -94,21 +100,24 @@ Data from device looks :
     </li>
 
 </ul>
-
+<hr>
+<br>
 <img src="git_img/intro7.png" alt="">
 <ul>
     <li>
         <p>Interpolated shape of regression in places of holes</p>
     </li>
 </ul>
-
+<hr>
+<br>
 <img src="git_img/intro8.png" alt="">
 <ul>
     <li>
         <p>Option to save most important calculated data</p>
     </li>
 </ul>
-
+<hr>
+<br>
 
 <br><br>
 <em>If You want to check functionallity of TiM 551 road analyze, download "sample_data.xlsx" and run 'dist/gui.exe'. Parameters to set up like on images above.</em>
