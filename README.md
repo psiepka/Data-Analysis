@@ -60,16 +60,15 @@ Data from device looks :
 <br>
 <u>Graphical user interface with functionality</u>: <br>
 <br>
+<img src="git_img/intro1.png" alt="">
 <ul>
     <li>
-        <img src="git_img/intro1.png" alt="">        
         <p>Setting name of project and select data file </p>
     </li>
 </ul>
 <ul>
+    <img src="git_img/intro2.png" alt="">
     <li>
-        <img src="git_img/intro2.png" alt="">
-
         <p>Reading file with specified data (condatain validation)</p>
     </li>
 </ul>
