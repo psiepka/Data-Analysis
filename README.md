@@ -18,7 +18,7 @@ All code was tested Jupyter notebook.
 <u>Preview</u>: <br>
 <br>
 Program is created for Civil Engineers to analyze roadway.
-Main goal is to process data from a <a href="https://www.sick.com/us/en/detection-and-ranging-solutions/2d-lidar-sensors/tim5xx/tim551-2050001/p/p343045">laser scaner TiM 551</a>.
+Main goal is to process data from a <a href="https://www.sick.com/us/en/detection-and-ranging-solutions/2d-lidar-sensors/tim5xx/tim551-2050001/p/p343045" target="_blank">laser scaner TiM 551</a>.
 All information that we need to get are compute in SOPAS engeenring tool and save in csv or excel file.
 File generete from SOPAS contain state device during measure and data of measure.
 Data from device looks :
